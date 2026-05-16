@@ -1,0 +1,53 @@
+export const USER = 'USER';
+export const USER_SUCCESS = 'USER_SUCCESS';
+export const USER_ERROR = 'USER_ERROR';
+
+export const LOGIN_USER = 'LOGIN_USER';
+export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
+export const LOGIN_USER_ERROR = 'LOGIN_USER_ERROR';
+
+export const LOGOUT_USER = 'LOGOUT_USER';
+export const LOGOUT_USER_SUCCESS = 'LOGOUT_USER_SUCCESS';
+export const LOGOUT_USER_ERROR = 'LOGOUT_USER_ERROR';
+
+// CREATE TASK
+export const CREATE_TASK = 'CREATE_TASK';
+export const CREATE_TASK_SUCCESS = 'CREATE_TASK_SUCCESS';
+export const CREATE_TASK_ERROR = 'CREATE_TASK_ERROR';
+
+// UPDATE TASK
+export const UPDATE_TASK = 'UPDATE_TASK';
+export const UPDATE_TASK_SUCCESS = 'UPDATE_TASK_SUCCESS';
+export const UPDATE_TASK_ERROR = 'UPDATE_TASK_ERROR';
+
+
+
+// MY TASK
+export const MY_TASK = 'MY_TASK';
+export const MY_TASK_SUCCESS = 'MY_TASK_SUCCESS';
+export const MY_TASK_ERROR = 'MY_TASK_ERROR';
+
+
+// GET TASK
+export const GET_TASK = 'GET_TASK';
+export const GET_TASK_SUCCESS = 'GET_TASK_SUCCESS';
+export const GET_TASK_ERROR = 'GET_TASK_ERROR';
+
+
+
+// GET TASK
+export const FIND_ALL = 'FIND_ALL';
+export const FIND_ALL_SUCCESS = 'FIND_ALL_SUCCESS';
+export const FIND_ALL_ERROR = 'FIND_ALL_ERROR';
+
+
+// create user
+export const CREATE_USER = 'CREATE_USER';
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const CREATE_USER_ERROR = 'CREATE_USER_ERROR';
+
+// ALL user
+export const ALL_USER = 'ALL_USER';
+export const ALL_USER_SUCCESS = 'ALL_USER_SUCCESS';
+export const ALL_USER_ERROR = 'ALL_USER_ERROR';
+
