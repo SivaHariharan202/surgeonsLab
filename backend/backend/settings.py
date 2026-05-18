@@ -268,7 +268,7 @@ DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get(
             "DATABASE_URL",
-            "postgresql://siva:QnTvAuRb6I0TyZROuaYrRZD8ejtgcMHW@dpg-d85k4d0js32c73alldv0-a.singapore-postgres.render.com/test_db_n4z8"
+            "postgresql://siva:QnTvAuRb6I0ldv0-a.singapore-postgres.render.com/test_db_n4z8"
         )
     )
 }
