@@ -341,4 +341,4 @@ SIMPLE_JWT = {
 
 
 # Custom User Model (Uncomment if using custom user)
-AUTH_USER_MODEL = 'api.TaskAppUser'
+# AUTH_USER_MODEL = 'api.TaskAppUser'

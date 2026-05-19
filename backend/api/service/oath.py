@@ -238,65 +238,6 @@ def GetProfileService(request):
 
 
 
-# --------------------------------
-# Create User API (Admin Only)
-# --------------------------------
-@api_view(['POST'])
-def CreateUserService(request):
-    try:
-
-        logged_user = get_logged_user(request)
-
-        if not logged_user:
-            return Response(api_response(
-                status=ApiResponseStatus.ERROR,
-                error={
-                    "type": ErrorMessageType.ERROR,
-                    "message": "Unauthorized User"
-                }
-            ))
-
-        # Admin Check
-        if logged_user.role != 'admin':
-            return Response(api_response(
-                status=ApiResponseStatus.ERROR,
-                error={
-                    "type": ErrorMessageType.ERROR,
-                    "message": "Only admin can create users"
-                }
-            ))
-
-        serializer = TaskAppUserSerializer(
-            data=request.data
-        )
-
-        if serializer.is_valid():
-            serializer.save()
-
-            return Response(api_response(
-                status=ApiResponseStatus.SUCCESS,
-                data=serializer.data
-            ))
-
-        return Response(api_response(
-            status=ApiResponseStatus.ERROR,
-            error={
-                "type": ErrorMessageType.ERROR,
-                "message": serializer.errors
-            }
-        ))
-
-    except Exception as e:
-        return Response(api_response(
-            status=ApiResponseStatus.ERROR,
-            error={
-                "type": ErrorMessageType.ERROR,
-                "message": str(e)
-            }
-        ))
-    
-
-
 
 @api_view(['POST'])
 def LogoutService(request):
