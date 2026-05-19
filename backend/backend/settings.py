@@ -264,11 +264,20 @@ ASGI_APPLICATION = "backend.asgi.application"
 
 # Database (Render PostgreSQL)
 # Database (Render PostgreSQL)
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         os.environ.get(
+#             "DATABASE_URL",
+#             "postgresql://siva:QnTvAuRb6I0ldv0-a.singapore-postgres.render.com/test_db_n4z8"
+#         )
+#     )
+# }
+
 DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get(
             "DATABASE_URL",
-            "postgresql://siva:QnTvAuRb6I0ldv0-a.singapore-postgres.render.com/test_db_n4z8"
+            "postgresql://siva:QnTvAuRb6I0TyZROuaYrRZD8ejtgcMHW@dpg-d85k4d0js32c73alldv0-a.singapore-postgres.render.com/test_db_n4z8"
         )
     )
 }
@@ -321,17 +330,31 @@ STATICFILES_STORAGE = (
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-# CORS
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
-
 
 # Django REST Framework
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ),
+# }
+
+# REST_FRAMEWORK = {}
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': [],
 }
+
+
+
+# CORS
+# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+    # "https://your-frontend-url.onrender.com",
+]
 
 
 # JWT Settings

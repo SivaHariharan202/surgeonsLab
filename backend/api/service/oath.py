@@ -338,9 +338,11 @@ def LogoutService(request):
 
 @api_view(['GET'])
 def GetAllUsersService(request):
+    print("API HIT SUCCESS")
     try:
 
         logged_user = get_logged_user(request)
+        print("loged user",logged_user)
 
         if not logged_user:
             return Response(api_response(
@@ -451,4 +453,3 @@ def CreateUserService(request):
         }, status=500)
     
 
-    
