@@ -385,3 +385,70 @@ def GetAllUsersService(request):
         ))
 
 
+
+
+
+@api_view(['POST'])
+def CreateUserService(request):
+
+    try:
+
+        # Get logged user from token
+        logged_user = get_logged_user(request)
+
+        # Check login
+        if not logged_user:
+            return Response({
+                "status": "Error",
+                "message": "Unauthorized User"
+            }, status=401)
+
+        # Admin only
+        if logged_user.role != "admin":
+            return Response({
+                "status": "Error",
+                "message": "Only admin can create user"
+            }, status=403)
+
+        # Check email already exists
+        email = request.data.get("email")
+
+        user_exists = TaskAppUser.objects.filter(
+            email=email
+        ).exists()
+
+        if user_exists:
+            return Response({
+                "status": "Error",
+                "message": "Email already exists"
+            })
+
+        # Save user
+        serializer = TaskAppUserSerializer(
+            data=request.data
+        )
+
+        if serializer.is_valid():
+
+            serializer.save()
+
+            return Response({
+                "status": "Success",
+                "message": "User created successfully",
+                "data": serializer.data
+            })
+
+        return Response({
+            "status": "Error",
+            "message": serializer.errors
+        })
+
+    except Exception as e:
+
+        return Response({
+            "status": "Error",
+            "message": str(e)
+        }, status=500)
+    
+
+    
