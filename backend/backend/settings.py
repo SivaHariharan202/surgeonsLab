@@ -352,8 +352,9 @@ REST_FRAMEWORK = {
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    # "http://localhost:3000"
     # "https://your-frontend-url.onrender.com",
+    "https://surgeonslab-assignment.onrender.com",
 ]
 
 
